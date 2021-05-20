@@ -8,7 +8,7 @@ export default class extends Controller {
   //   console.log("Hello from your first Stimulus controller")
   // }
 
-  toggle() {
+  checkAllCheckboxes() {
     // console.log(event);
     // console.log(this.checkboxTargets);
     this.checkboxTargets.forEach((checkbox) => {

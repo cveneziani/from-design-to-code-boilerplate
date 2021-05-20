@@ -1,21 +1,16 @@
 <div class="container">
-  <div class='mt-5'  data-controller='check-all-checkboxes' >
+  <div class='mt-5'  data-controller='movies' >
     <h3>Movies to watch 🍿</h3>
     <div class='form-check mt-4'>
-      <input type="checkbox" class="form-check-input" data-action="change->check-all-checkboxes#toggle">
+      <input type="checkbox" class="form-check-input" data-action="change->movies#checkAllCheckboxes">
       <label>Check all</label>
     </div>
-    <hr>
+
     <div>
-      <% @movies.each do |movie| %>
-        <div class='form-check'>
-          <input type="checkbox" class="form-check-input" data-check-all-checkboxes-target="checkbox">
-          <label><%= movie.title %></label>
-        </div>
-      <% end %>
-      <hr>
-      <button class='btn btn-sm btn-danger mt-3'>Delete selected movies</button>
+      <%= render 'list', movies: @movies %>
     </div>
+
+    <button class='btn btn-sm btn-danger mt-3'>Delete selected movies</button>
   </div>
 </div>
 
