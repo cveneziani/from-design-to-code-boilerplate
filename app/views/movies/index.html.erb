@@ -1,12 +1,12 @@
 <div class="container">
-  <div class='mt-5'  data-controller='movies' >
+  <div class='mt-5'  data-controller='check-all-checkboxes batch-destroy' data-batch-destroy-path-value="<%= batch_destroy_movies_path %>" >
     <h3>Movies to watch 🍿</h3>
 
-    <div data-movies-target="list">
+    <div data-batch-destroy-target="list">
       <%= render 'list', movies: @movies %>
     </div>
 
-    <button class="btn btn-sm btn-danger mt-3" data-action="click->movies#deleteSelected" data-movies-target="deleteBtn" data-path="<%= delete_selected_movies_path %>">
+    <button class="btn btn-sm btn-danger mt-3" data-action="click->batch-destroy#destroyMovies">
       Delete selected movies
     </button>
   </div>

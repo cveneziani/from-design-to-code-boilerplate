@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
     @movies = Movie.all.order(:title)
   end
 
-  def delete_selected
-    @movies_to_destroy = Movie.where(id: params[:movies])
+  def batch_destroy
+    @movies_to_destroy = Movie.where(id: params[:movie_ids])
     @movies_to_destroy.destroy_all
 
     @movies = Movie.all
