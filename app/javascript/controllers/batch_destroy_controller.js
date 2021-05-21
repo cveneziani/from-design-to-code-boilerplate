@@ -12,7 +12,6 @@ export default class extends Controller {
     this.checkboxTargets.forEach((checkbox) => {
       if (checkbox.checked ) { movieIds.push(checkbox.dataset.id) }
     })
-    console.log(movieIds);
     // Fetch endpoint to delete selected movies on the server
     fetch(this.pathValue, {
       method: "DELETE",
