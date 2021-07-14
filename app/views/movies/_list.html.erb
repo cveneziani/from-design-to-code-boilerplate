@@ -1,10 +1,8 @@
-<div class="form-check mt-4">
-  <input type="checkbox" class="form-check-input" data-action="change->all-checkboxes#toggle">
-  <label>Check all</label>
-</div>
-
 <div class="border-top border-bottom py-3">
   <% @movies.each do |movie| %>
-    <%= render 'movie_item', movie: movie %>
+    <div class='form-check'>
+      <input type="checkbox" class="form-check-input" data-all-checkboxes-target="checkbox" data-batch-destroy-target="checkbox" data-id="<%= movie.id %>">
+      <label><%= movie.title %></label>
+    </div>
   <% end %>
 </div>
